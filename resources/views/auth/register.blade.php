@@ -1,4 +1,4 @@
-<x-guest-layout>
+{{-- <x-guest-layout>
     <x-auth-card>
         <x-slot name="logo">
             <a href="/">
@@ -56,4 +56,84 @@
             </div>
         </form>
     </x-auth-card>
-</x-guest-layout>
+</x-guest-layout> --}}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SIGN UP</title>
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="login/fonts/material-icon/css/material-design-iconic-font.min.css">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="login/css/style.css">
+</head>
+
+<body>
+
+    <!-- Validation Errors -->
+    <x-auth-validation-errors class="mb-4" :errors="$errors" />
+
+    <div class="main">
+
+        <!-- Sign up form -->
+        <section class="signup">
+            <div class="container">
+                <div class="signup-content">
+                    <div class="signup-form">
+                        <h2 class="form-title">SIGN UP</h2>
+                        <form method="POST" class="register-form" id="register-form" action="{{ route('register') }}">
+                            @csrf
+
+                            <!-- Name -->
+                            <div class="form-group">
+                                <label for="name" :value="__('Name')"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                                <input type="text" name="name" id="name" :value="old('name')" required autofocus />
+                            </div>
+
+                            <!-- Email Address -->
+                            <div class="form-group">
+                                <label for="email" :value="__('Email')" ><i class="zmdi zmdi-email"></i></label>
+                                <input type="email" name="email" id="email" :value="old('email')" required />
+                            </div>
+
+                            <!-- Password -->
+                            <div class="form-group">
+                                <label for="password" :value="__('Password')"><i class="zmdi zmdi-lock"></i></label>
+                                <input type="password" name="password" id="password" required autocomplete="new-password" />
+                            </div>
+
+                            <!-- Confirm Password -->
+                            <div class="form-group">
+                                <label for="password_confirmation" :value="__('Confirm Password')"><i class="zmdi zmdi-lock-outline"></i></label>
+                                <input type="password" name="password_confirmation" id="password_confirmation" required />
+                            </div>
+
+
+                            <div class="form-group form-button">
+                                {{-- <input type="submit" name="signup" id="signup" class="form-submit" value="Register" /> --}}
+
+                                <button type="submit" name="signup" id="signup" class="form-submit">{{ __('Register') }}</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="signup-image">
+                        <figure><img src="login/images/signup-image.jpg" alt="sing up image"></figure>
+                        <a href="log" class="sign-image-link" href="{{ route('login') }}">{{ __('Already registered?') }}</a> 
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- JS -->
+    <script src="login/vendor/jquery/jquery.min.js"></script>
+    <script src="login/js/main.js"></script>
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+
+</html>

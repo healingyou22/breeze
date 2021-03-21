@@ -46,6 +46,10 @@ class RegisteredUserController extends Controller
 
         event(new Registered($user));
 
-        return redirect(RouteServiceProvider::HOME);
+        $statusUser = Auth::user();
+        $statusUser->status = 1;
+        $statusUser->update();
+
+        return redirect('log');
     }
 }

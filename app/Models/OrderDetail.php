@@ -11,4 +11,13 @@ class OrderDetail extends Model
     {
         return $this->belongsTo(Order::class, 'order_id', 'id');
     }
+
+    public function Menu()
+    {
+        return $this->belongsTo(Menu::class, 'menu_id', 'id');
+    }
+
+    protected $fillable = [
+        'price', 'menu_id', 'order_id'
+    ];
 }

@@ -18,7 +18,10 @@ class CreateOrdersTable extends Migration
             $table->string('cust_name');
             $table->string('phone_no');
             $table->integer('seat');
-            $table->double("total_price");
+            $table->string('time');
+            $table->double("total_price")->default(0);
+            $table->integer('user_id');
+            $table->integer('status')->default(0);
             $table->timestamps();
         });
     }
