@@ -18,6 +18,6 @@ class OrderDetail extends Model
     }
 
     protected $fillable = [
-        'price', 'menu_id', 'order_id'
+        'price', 'menu_id', 'order_id', 'count'
     ];
 }

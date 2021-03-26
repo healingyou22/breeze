@@ -16,7 +16,6 @@
 
 <div class="row g-3">
 @foreach($orders as $user)
-{{ $orders->id }}
 <div class="col-sm-5">
     <input type="text" class="form-control" placeholder="{{ $user -> cust_name }}" aria-label="City" disabled>
   </div>
@@ -52,24 +51,25 @@
                     </thead>
                     <tbody>
                     <a type="text" placeholder="{{ $i = 1 }}" hidden> </a>
-                    @foreach($orderdetails as $list)
+                    @foreach($order_detail as $order_detail)
                         <tr>
-                            <td>{{$i++}}</td>
-                            <td>{{ $list->order_name}}</td>
-                            <td>Rp {{ $list->price}}</td>
-                            <td>{{ $list->count}}</td>
-                            <td>Rp {{ $sub = ($list->order_id) * ($list->count)}}</td>
+                            <td>{{ $i++ }}</td>
+                            <td>{{ $order_detail->menu->menu_name }}</td>
+                            <td>Rp {{ number_format($order_detail->price, 2)}}</td>
+                            <td>{{ $order_detail->count}}</td>
+                            <td>Rp {{ number_format($sub = ($order_detail->price) * ($order_detail->count), 2) }}</td>
                             <td>
                                 <a href="" class="btn btn-danger btn-xs">x</a>
                             </td>
                         </tr>
                         @endforeach
                     </tbody>
+                    <caption style="font-weight: bold" >Total Harga : {{ $order1->total_price }}</caption>
                     <caption>*The food and beverages listed above do not include tax</caption>
                 </table> <br>
 
-                <a href="" class="btn btn-warning">Order Menu Again</a>
-                <a href="" class="btn btn-primary">Submit</a>
+                <a href="/menu" class="btn btn-warning">Order Menu Again</a>
+                <a href="/success" class="btn btn-primary">Submit</a>
             </div>
         </div>
     </div>
