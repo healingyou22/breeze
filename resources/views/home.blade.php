@@ -125,14 +125,14 @@
                                     <div class="col-lg-6">
                                         <div class="row">
                                             <div class="left-list">
-                                            @foreach($menus1 as $menu)
+                                                @foreach($menus1 as $menu)
                                                 <div class="col-lg-12">
                                                     <div class="tab-item">
                                                         <img src="assets/images/{{$menu->menu_image}}" alt="">
                                                         <h4>{{ $menu->menu_name }}</h4>
                                                         <p>{{ $menu->menu_desc }}</p>
                                                         <div class="price">
-                                                            <h6>${{ $menu->menu_price }}</h6>
+                                                            <h6>Rp {{ $menu->menu_price }}</h6>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -143,7 +143,7 @@
                                     <div class="col-lg-6">
                                         <div class="row">
                                             <div class="right-list">
-                                            @foreach($menus2 as $menu)
+                                                @foreach($menus2 as $menu)
                                                 <div class="col-lg-12">
                                                     <div class="tab-item">
                                                         <img src="assets/images/{{$menu->menu_image}}" alt="">
@@ -165,7 +165,7 @@
                                     <div class="col-lg-6">
                                         <div class="row">
                                             <div class="left-list">
-                                            @foreach($menus3 as $menu)
+                                                @foreach($menus3 as $menu)
                                                 <div class="col-lg-12">
                                                     <div class="tab-item">
                                                         <img src="assets/images/{{$menu->menu_image}}" alt="">
@@ -183,7 +183,7 @@
                                     <div class="col-lg-6">
                                         <div class="row">
                                             <div class="right-list">
-                                            @foreach($menus4 as $menu)
+                                                @foreach($menus4 as $menu)
                                                 <div class="col-lg-12">
                                                     <div class="tab-item">
                                                         <img src="assets/images/{{$menu->menu_image}}" alt="">

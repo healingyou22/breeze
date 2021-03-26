@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="assets/css/templatemo-klassy-cafe.css">
     <link rel="stylesheet" href="assets/css/owl-carousel.css">
     <link rel="stylesheet" href="assets/css/lightbox.css">
+
 </head>
 
 <body>
@@ -61,8 +62,7 @@
                                         <!-- Authentication -->
                                         <form method="POST" action="{{ route('logout') }}">
                                             @csrf
-                                            <a href="route('logout')"
-                                                    onclick="event.preventDefault();
+                                            <a href="route('logout')" onclick="event.preventDefault();
                                                                 this.closest('form').submit();">
                                                 {{ __('Log out') }}
                                             </a>
